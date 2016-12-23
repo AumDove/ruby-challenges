@@ -1,14 +1,9 @@
 require 'barometer'
-require 'barometer-weather_bug'
-require 'barometer-noaa'
-require 'barometer-forecast_io'
-
-Barometer.config = { 1 => [:noaa, :forecast_io, :weather_bug, :wunderground] }
 
 puts "Enter your location."
-location = gets.chomp
+place = gets.chomp
 
-barometer = Barometer.new(location)
+barometer = Barometer.new(place)
 weather = barometer.measure
 
-puts weather
+puts weather.current.condition
