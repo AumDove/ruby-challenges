@@ -16,14 +16,14 @@ puts "\n"
 tomorrow = Time.now.strftime('%d').to_i + 1
 
 weather.forecast.each do |forecast|
-    day = forecast.starts_at.day
+  day = forecast.starts_at.day
 
-    if day == tomorrow
-        dayName = "TOMORROW"
-    else
-        dayName = forecast.starts_at.strftime('%A').upcase
-    end
+  if day == tomorrow
+    day_name = "TOMORROW"
+  else
+    day_name = forecast.starts_at.strftime('%A').upcase
+  end
 
-    puts dayName + ' is going to be ' + forecast.icon + ' with lows around ' + forecast.low.f.to_s + ' and highs around ' + forecast.high.f.to_s + "\n"
-    puts "\n"
+  puts day_name + ' is going to be ' + forecast.icon + ' with lows around ' + forecast.low.f.to_s + ' and highs around ' + forecast.high.f.to_s + "\n"
+  puts "\n"
 end
